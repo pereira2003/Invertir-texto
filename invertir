@@ -1,0 +1,28 @@
+using System;
+
+class InvertirCadena
+{
+    static void Main()
+    {
+        Console.WriteLine("Por favor, ingresa la cadena de texto a invertir:");
+        string cadena = Console.ReadLine();
+        string cadenaInvertida = Invertir(cadena);
+        Console.WriteLine($"La cadena invertida es: {cadenaInvertida}");
+    }
+
+    static string Invertir(string cadena)
+    {
+        char[] arreglo = cadena.ToCharArray();
+        int inicio = 0;
+        int fin = arreglo.Length - 1;
+        while (inicio < fin)
+        {
+            char temp = arreglo[inicio];
+            arreglo[inicio] = arreglo[fin];
+            arreglo[fin] = temp;
+            inicio++;
+            fin--;
+        }
+        return new string(arreglo);
+    }
+}
